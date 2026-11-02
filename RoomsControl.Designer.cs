@@ -33,8 +33,8 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            RoomNum = new TextBox();
+            txtPrice = new TextBox();
             cmbRoomType = new ComboBox();
             cmbStatus = new ComboBox();
             btnAdd = new Button();
@@ -100,21 +100,21 @@
             label5.TabIndex = 4;
             label5.Text = "Status";
             // 
-            // textBox1
+            // RoomNum
             // 
-            textBox1.Location = new Point(66, 126);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(263, 27);
-            textBox1.TabIndex = 5;
+            RoomNum.Location = new Point(66, 126);
+            RoomNum.Multiline = true;
+            RoomNum.Name = "RoomNum";
+            RoomNum.Size = new Size(263, 27);
+            RoomNum.TabIndex = 5;
             // 
-            // textBox2
+            // txtPrice
             // 
-            textBox2.Location = new Point(66, 211);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(256, 27);
-            textBox2.TabIndex = 6;
+            txtPrice.Location = new Point(66, 211);
+            txtPrice.Multiline = true;
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(256, 27);
+            txtPrice.TabIndex = 6;
             // 
             // cmbRoomType
             // 
@@ -143,6 +143,7 @@
             btnAdd.TabIndex = 9;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
@@ -201,8 +202,8 @@
             Controls.Add(btnAdd);
             Controls.Add(cmbStatus);
             Controls.Add(cmbRoomType);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPrice);
+            Controls.Add(RoomNum);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -210,6 +211,7 @@
             Controls.Add(label1);
             Name = "RoomsControl";
             Size = new Size(807, 555);
+            Load += RoomsControl_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRooms).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -222,8 +224,8 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox RoomNum;
+        private TextBox txtPrice;
         private ComboBox cmbRoomType;
         private ComboBox cmbStatus;
         private Button btnAdd;
