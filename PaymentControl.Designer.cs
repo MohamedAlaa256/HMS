@@ -52,10 +52,13 @@
             btnPayment.TabIndex = 35;
             btnPayment.Text = "Process Payment";
             btnPayment.UseVisualStyleBackColor = false;
+            btnPayment.Click += btnPayment_Click;
             // 
             // cmbPaymentMethod
             // 
+            cmbPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPaymentMethod.FormattingEnabled = true;
+            cmbPaymentMethod.Items.AddRange(new object[] { "Cash", "Card" });
             cmbPaymentMethod.Location = new Point(64, 335);
             cmbPaymentMethod.Name = "cmbPaymentMethod";
             cmbPaymentMethod.Size = new Size(526, 28);
@@ -63,7 +66,10 @@
             // 
             // cmbGuestName
             // 
+            cmbGuestName.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbGuestName.FlatStyle = FlatStyle.System;
             cmbGuestName.FormattingEnabled = true;
+            cmbGuestName.Items.AddRange(new object[] { "ahmed", "mohamed", "mahmoud" });
             cmbGuestName.Location = new Point(64, 163);
             cmbGuestName.Name = "cmbGuestName";
             cmbGuestName.Size = new Size(526, 28);
@@ -123,7 +129,9 @@
             // 
             // cmbPaymentStatus
             // 
+            cmbPaymentStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPaymentStatus.FormattingEnabled = true;
+            cmbPaymentStatus.Items.AddRange(new object[] { "Paid", "Partial", "Pending" });
             cmbPaymentStatus.Location = new Point(64, 423);
             cmbPaymentStatus.Name = "cmbPaymentStatus";
             cmbPaymentStatus.Size = new Size(526, 28);
