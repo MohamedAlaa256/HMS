@@ -31,10 +31,10 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txtUsername = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtPassword = new TextBox();
             button1 = new Button();
             button2 = new Button();
             panel1.SuspendLayout();
@@ -73,14 +73,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.BackColor = Color.FromArgb(240, 243, 255);
-            textBox1.Location = new Point(33, 271);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(268, 36);
-            textBox1.TabIndex = 1;
+            txtUsername.BackColor = Color.FromArgb(240, 243, 255);
+            txtUsername.Location = new Point(33, 271);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(268, 36);
+            txtUsername.TabIndex = 1;
             // 
             // label2
             // 
@@ -104,13 +104,13 @@
             label3.TabIndex = 4;
             label3.Text = "Password";
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(33, 368);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(268, 36);
-            textBox2.TabIndex = 3;
+            txtPassword.Location = new Point(33, 368);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(268, 36);
+            txtPassword.TabIndex = 3;
             // 
             // button1
             // 
@@ -147,9 +147,9 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(txtPassword);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsername);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -166,10 +166,10 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox txtUsername;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtPassword;
         private Button button1;
         private Button button2;
     }

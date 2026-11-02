@@ -41,8 +41,8 @@
             btnEdit = new Button();
             btnAdd = new Button();
             label6 = new Label();
-            dgvRooms = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvRooms).BeginInit();
+            dgvGuests = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvGuests).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -143,6 +143,7 @@
             btnDelete.TabIndex = 17;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -155,6 +156,7 @@
             btnEdit.TabIndex = 16;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnAdd
             // 
@@ -167,6 +169,7 @@
             btnAdd.TabIndex = 15;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // label6
             // 
@@ -179,15 +182,15 @@
             label6.TabIndex = 19;
             label6.Text = "Guests List";
             // 
-            // dgvRooms
+            // dgvGuests
             // 
-            dgvRooms.BackgroundColor = Color.FromArgb(224, 224, 224);
-            dgvRooms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRooms.Location = new Point(70, 347);
-            dgvRooms.Name = "dgvRooms";
-            dgvRooms.RowHeadersWidth = 51;
-            dgvRooms.Size = new Size(569, 188);
-            dgvRooms.TabIndex = 18;
+            dgvGuests.BackgroundColor = Color.FromArgb(224, 224, 224);
+            dgvGuests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGuests.Location = new Point(70, 347);
+            dgvGuests.Name = "dgvGuests";
+            dgvGuests.RowHeadersWidth = 51;
+            dgvGuests.Size = new Size(569, 188);
+            dgvGuests.TabIndex = 18;
             // 
             // GuestsControl
             // 
@@ -195,7 +198,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 27, 38);
             Controls.Add(label6);
-            Controls.Add(dgvRooms);
+            Controls.Add(dgvGuests);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnAdd);
@@ -210,7 +213,8 @@
             Controls.Add(label2);
             Name = "GuestsControl";
             Size = new Size(807, 555);
-            ((System.ComponentModel.ISupportInitialize)dgvRooms).EndInit();
+            Load += GuestUserControl_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvGuests).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,6 +233,6 @@
         private Button btnEdit;
         private Button btnAdd;
         private Label label6;
-        private DataGridView dgvRooms;
+        private DataGridView dgvGuests;
     }
 }
