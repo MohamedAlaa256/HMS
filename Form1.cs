@@ -59,8 +59,6 @@ namespace Hotel_Management_System
         {
             label2.Text = "Username";
 
-            txtPassword.UseSystemPasswordChar = true;
-
             AcceptButton = button1;
         }
 
