@@ -42,6 +42,7 @@ namespace Hotel_Management_System
             {
                 ShowError("Password must contain at least one letter and one number.", txtPassword);
                 return;
+
             }
 
             // Open Main Form
