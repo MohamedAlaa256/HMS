@@ -177,9 +177,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(224, 20);
             label2.Name = "label2";
-            label2.Size = new Size(233, 31);
+            label2.Size = new Size(220, 31);
             label2.TabIndex = 20;
-            label2.Text = "Guests Management";
+            label2.Text = "Users Management";
             // 
             // cmbRole
             // 

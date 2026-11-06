@@ -42,6 +42,7 @@ namespace Hotel_Management_System
             {
                 ShowError("Password must contain at least one letter and one number.", txtPassword);
                 return;
+
             }
 
             // Open Main Form
@@ -58,8 +59,6 @@ namespace Hotel_Management_System
         private void Form1_Load(object sender, EventArgs e)
         {
             label2.Text = "Username";
-
-            txtPassword.UseSystemPasswordChar = true;
 
             AcceptButton = button1;
         }

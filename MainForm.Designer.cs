@@ -261,6 +261,7 @@
             ClientSize = new Size(1013, 562);
             Controls.Add(centerPanel);
             Controls.Add(panel1);
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "MainForm";
             FormClosing += MainForm_FormClosing;
