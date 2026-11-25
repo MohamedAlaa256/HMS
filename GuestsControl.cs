@@ -29,6 +29,7 @@ namespace Hotel_Management_System
             dgvGuests.Columns.Add("FullName", "Full Name");
             dgvGuests.Columns.Add("Phone", "Phone Number");
             dgvGuests.Columns.Add("Email", "Email Address");
+            dgvGuests.Columns.Add("Status", "Guest Status");
 
             // Allow manual row insertions directly to the UI collection
             dgvGuests.AllowUserToAddRows = false;
@@ -75,7 +76,6 @@ namespace Hotel_Management_System
             // Add the new guest to the DataGridView
             foreach (DataGridViewRow row in dgvGuests.Rows)
             {
-                // Warning Fixed: Safely check for null cell values using ?. and ??
                 string existingID = row.Cells["GuestID"].Value?.ToString() ?? string.Empty;
                 if (existingID == guestID.ToString())
                 {
@@ -83,12 +83,19 @@ namespace Hotel_Management_System
                     return;
                 }
             }
-            dgvGuests.Rows.Add(guestID, txtFullName.Text, txtPhone.Text, txtEmail.Text);
+            dgvGuests.Rows.Add(guestID, txtFullName.Text, txtPhone.Text, txtEmail.Text, "Registered");
             ClearInputs();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
+            string.IsNullOrWhiteSpace(txtPhone.Text) ||
+            string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Please fill in all guest information.");
+                return;
+            }
             if (dgvGuests.CurrentRow == null)
             {
                 MessageBox.Show("Please select a guest to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -128,11 +135,45 @@ namespace Hotel_Management_System
         private void ClearInputs()
         {
             txtGuestID.Clear();
-            txtFullName.Clear(); 
+            txtFullName.Clear();
             txtPhone.Clear();
             txtEmail.Clear();
         }
 
+        private void txtSearchGuest_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtSearchGuest.Text.Trim().ToLower();
 
+            // Clear current selection before hiding rows
+            dgvGuests.CurrentCell = null;
+
+            foreach (DataGridViewRow row in dgvGuests.Rows)
+            {
+                if (row.IsNewRow)
+                    continue;
+
+                string name = row.Cells["FullName"].Value?.ToString().ToLower() ?? "";
+                string phone = row.Cells["Phone"].Value?.ToString().ToLower() ?? "";
+                string email = row.Cells["Email"].Value?.ToString().ToLower() ?? "";
+
+                row.Visible =
+                    name.Contains(search) ||
+                    phone.Contains(search) ||
+                    email.Contains(search);
+            }
+        }
+
+        private void dgvGuests_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row = dgvGuests.Rows[e.RowIndex];
+
+            txtGuestID.Text = row.Cells["GuestID"].Value?.ToString();
+            txtFullName.Text = row.Cells["FullName"].Value?.ToString();
+            txtPhone.Text = row.Cells["Phone"].Value?.ToString();
+            txtEmail.Text = row.Cells["Email"].Value?.ToString();
+        }
     }
 }

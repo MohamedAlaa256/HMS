@@ -42,6 +42,7 @@
             btnAdd = new Button();
             label6 = new Label();
             dgvGuests = new DataGridView();
+            txtSearchGuest = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvGuests).BeginInit();
             SuspendLayout();
             // 
@@ -176,7 +177,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(69, 321);
+            label6.Location = new Point(70, 323);
             label6.Name = "label6";
             label6.Size = new Size(91, 23);
             label6.TabIndex = 19;
@@ -186,17 +187,28 @@
             // 
             dgvGuests.BackgroundColor = Color.FromArgb(224, 224, 224);
             dgvGuests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGuests.Location = new Point(70, 347);
+            dgvGuests.Location = new Point(70, 356);
             dgvGuests.Name = "dgvGuests";
             dgvGuests.RowHeadersWidth = 51;
             dgvGuests.Size = new Size(569, 188);
             dgvGuests.TabIndex = 18;
+            dgvGuests.CellClick += dgvGuests_CellClick;
+            // 
+            // txtSearchGuest
+            // 
+            txtSearchGuest.Location = new Point(167, 323);
+            txtSearchGuest.Name = "txtSearchGuest";
+            txtSearchGuest.PlaceholderText = "Search by name, phone or email";
+            txtSearchGuest.Size = new Size(472, 27);
+            txtSearchGuest.TabIndex = 20;
+            txtSearchGuest.TextChanged += txtSearchGuest_TextChanged;
             // 
             // GuestsControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 27, 38);
+            Controls.Add(txtSearchGuest);
             Controls.Add(label6);
             Controls.Add(dgvGuests);
             Controls.Add(btnDelete);
@@ -234,5 +246,6 @@
         private Button btnAdd;
         private Label label6;
         private DataGridView dgvGuests;
+        private TextBox txtSearchGuest;
     }
 }
