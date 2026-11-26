@@ -50,6 +50,7 @@
             btnConfirmCheckOut.TabIndex = 27;
             btnConfirmCheckOut.Text = "Confirm Check-Out";
             btnConfirmCheckOut.UseVisualStyleBackColor = false;
+            btnConfirmCheckOut.Click += btnConfirmCheckOut_Click;
             // 
             // dateTimePicker2
             // 
